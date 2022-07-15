@@ -10,6 +10,10 @@ def get_tfs(ds_name):
     Parameter:
     
         ds_name - dataset name, str.
+
+    Output:
+
+        tfs     - transformations to be applied, transforms object.
     
     """
     
