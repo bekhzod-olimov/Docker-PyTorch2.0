@@ -1,7 +1,6 @@
 # Import libraries
 import timm, torch
-from tqdm import tqdm
-from time import time
+from tqdm import tqdm; from time import time
 
 def saveModel(ds_name, model):
     
@@ -67,8 +66,8 @@ def validation(model, val_dl, device, ds_name):
             # Get model predictions
             outputs = model(images)
             
-            # Get the prediction with the max value
-            _, predicted = torch.max(outputs.data, 1)
+            # Get the prediction index with the max value
+            predicted = torch.argmax(outputs, dim = 1)
             
             # Add batch size to the total number of samples
             total += labels.size(0)
