@@ -71,17 +71,21 @@ change the port of your current running server to the port you defined before, e
 docker ps
 ```
 
-Get the proccess id and run the docker using the process id:
+Get the proccess id, port number, and run the docker using the process id:
 
 ```python
-docker exec -it 3a0a920af240 /bin/bash
+docker exec -it <process_id> /bin/bash
 ```
+For example, docker exec -it 3a0a920af240 /bin/bash
 
 Run the jupyter notebook:
 
 ```python
-jupyter notebook --ip 0.0.0.0 --port 9999 --no-browser --allow-root
+jupyter notebook --ip 0.0.0.0 --port <port_num> --no-browser --allow-root
 ```
+For example, jupyter notebook --ip 0.0.0.0 --port 9999 --no-browser --allow-root
+Check the running jupyter notebook on the port number from the "docker ps" and access the notebook.
+For example, http://218.38.14.20:49153/lab
 
 ## PyTorch 2.0 Training 
 
