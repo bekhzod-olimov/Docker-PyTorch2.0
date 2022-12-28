@@ -42,5 +42,12 @@ where, <docker_name> is the name of the docker, pytorch2.0
 ```python
 pip install numpy --pre torch torchvision torchaudio --force-reinstall --extra-index-url https://download.pytorch.org/whl/nightly/cu116
 ```
+* Double check the proper installation of the libraries and gpu availability:
+```python
+import torch
+torch.cuda.is_available()
+```
+It must return True
 
+![Capture1](https://user-images.githubusercontent.com/50166164/209747464-fd0a0f09-9902-450b-a8bf-d0ca94f15b14.PNG)
 
