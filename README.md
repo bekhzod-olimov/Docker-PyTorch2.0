@@ -33,4 +33,9 @@ docker exec -it <docker_name> /bin/bash
 ```
 where, <docker_name> is the name of the docker, pytorch2.0
 
+* Install libraries:
+```python
+pip install numpy --pre torch torchvision torchaudio --force-reinstall --extra-index-url https://download.pytorch.org/whl/nightly/cu116
+```
+
 
