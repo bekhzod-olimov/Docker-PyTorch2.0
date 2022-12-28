@@ -45,6 +45,7 @@ pip install numpy --pre torch torchvision torchaudio --force-reinstall --extra-i
 * Double check the proper installation of the libraries and gpu availability:
 ```python
 import torch
+torch.__version__
 torch.cuda.is_available()
 ```
 It must return True
