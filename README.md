@@ -57,4 +57,10 @@ It must return 2.0.0.dev20221227+cu116 and True
 pip install jupyter jupyterlab
 ```
 
+* Run the jupyterlab:
+```python
+jupyter lab --ip 0.0.0.0 --allow-root --port 9110 --no-browser
+```
+change the port of your current running server to the port you defined before, ex: 9110. Enter the token that is generated when you run the jupyterlab
+
 
