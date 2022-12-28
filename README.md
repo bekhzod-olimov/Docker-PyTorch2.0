@@ -21,10 +21,10 @@ docker images
 ```python
 docker run --gpus all -itd -p 9110:9110 -p 9111:9111 --name pytorch2.0 qpod0dev/cuda_11.6
 ```
-where --gpus all - if you want to access gpus;
--p - is the port to run the docker, ex. 9110:9110, 9111:9111;
---name - is the name for docker, pytorch2.0;
-the last variable is the name of the docker, qpod0dev/cuda_11.6
+where, --gpus all - if you want to access gpus;\
+-p - is the port to run the docker, ex. 9110:9110, 9111:9111;\
+--name - is the name for docker, pytorch2.0;\
+the last variable is the name of the docker, qpod0dev/cuda_11.6\
 
 * 
 
