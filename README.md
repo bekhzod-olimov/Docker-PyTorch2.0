@@ -12,5 +12,5 @@ pip install docker
 ```python
 docker pull <image name>
 ```
-It takes some time until the pull process is completed.
+It takes some time until the pull process is completed.\
 * 
