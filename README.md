@@ -7,5 +7,5 @@ This repository contains information on installing [docker](https://www.docker.c
 ```python
 pip install docker
 ```
-
+* Go to [Docker Hub website](https://hub.docker.com/) and search for the necessary image, ex. cuda_11.6
 * 
