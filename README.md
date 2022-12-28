@@ -8,4 +8,9 @@ This repository contains information on installing [docker](https://www.docker.c
 pip install docker
 ```
 * Go to [Docker Hub website](https://hub.docker.com/) and search for the necessary image, ex. cuda_11.6
+* Pull it using the following command:
+```python
+docker pull <image name>
+```
+It takes some time until the pull process is completed.
 * 
