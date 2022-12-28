@@ -13,4 +13,4 @@ pip install docker
 docker pull <image name>
 ```
 It takes some time until the pull process is completed.\
-* 
+* asdasd
