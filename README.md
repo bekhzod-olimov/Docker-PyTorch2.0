@@ -52,4 +52,9 @@ It must return 2.0.0.dev20221227+cu116 and True
 
 ![Capture1](https://user-images.githubusercontent.com/50166164/209747727-88acd0c2-57fd-48e2-a89d-e1fc8720b8c1.PNG)
 
+* Install jupyter and jupyterlab:
+```python
+pip install jupyter jupyterlab
+```
+
 
