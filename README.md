@@ -13,13 +13,13 @@ pip install docker
 docker pull <image name>
 ```
 It takes some time until the pull process is completed.
-![Capture](https://user-images.githubusercontent.com/50166164/209746959-7b68f8e0-e009-442c-96bb-2c084b74692d.PNG)
+![Capture](https://user-images.githubusercontent.com/50166164/209746959-7b68f8e0-e009-442c-96bb-2c084b74692d.PNG)\
 
 * Double check whether the image is successfully installed using: 
 ```python
 docker images
 ```
-![Capture1](https://user-images.githubusercontent.com/50166164/209746985-5fd47b6e-c91d-4c1b-9cdd-97307150ec38.PNG)
+![Capture1](https://user-images.githubusercontent.com/50166164/209746985-5fd47b6e-c91d-4c1b-9cdd-97307150ec38.PNG)\
 
 * Run container with the installed image:
 ```python
