@@ -12,7 +12,7 @@ pip install docker
 ```python
 docker pull <image name>
 ```
-It takes some time until the pull process is completed.\
+It takes some time until the pull process is completed.
 * Double check whether the image is successfully installed using: 
 ```python
 docker images
@@ -24,13 +24,13 @@ docker run --gpus all -itd -p <port> -p <port> --name <docker_name> <image_name>
 where, --gpus all - if you want to access gpus;\
 -p - is the port to run the docker, ex. 9110:9110, 9111:9111;\
 --name - is the name for docker, pytorch2.0;\
-<image_name> is the name of the image, qpod0dev/cuda_11.6\
+<image_name> is the name of the image, qpod0dev/cuda_11.6
 
 * Run the docker:
 
 ```python
 docker exec -it <docker_name> /bin/bash
 ```
-where, <docker_name> is the name of the docker, pytorch2.0\
+where, <docker_name> is the name of the docker, pytorch2.0
 
 
