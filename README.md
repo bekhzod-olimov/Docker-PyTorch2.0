@@ -13,6 +13,7 @@ pip install docker
 docker pull <image name>
 ```
 It takes some time until the pull process is completed.\
+
 ![Capture](https://user-images.githubusercontent.com/50166164/209746959-7b68f8e0-e009-442c-96bb-2c084b74692d.PNG)
 
 * Double check whether the image is successfully installed using: 
