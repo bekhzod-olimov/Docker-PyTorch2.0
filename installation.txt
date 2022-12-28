@@ -1,0 +1,9 @@
+Step-by-step tutorial:
+
+1. Install docker: pip install docker
+2. Visit hub.docker.com and search for the necessary image, ex cuda_11.6
+3. Pull it as: docker pull <image name>
+4. Check the completing as: docker images
+5. Run the docker: docker run --gpus all -itd -p 9110:9110 -p 9111:9111 --name pytorch2.0 qpod0dev/cuda_11.6
+6. Execute the docker: docker exec -it pytorch2.0 /bin/bash
+7. Install libraries: pip install numpy --pre torch torchvision torchaudio --force-reinstall --extra-index-url https://download.pytorch.org/whl/nightly/cu116
