@@ -90,4 +90,19 @@ Although it is mentioned that a model can benefit up to [38% speedup](https://py
 ![mnist_train](https://user-images.githubusercontent.com/50166164/209889817-19978013-d71b-45d8-8b49-4d8005903e65.png)
 ![mnist_valid](https://user-images.githubusercontent.com/50166164/209889841-e7b91162-ae81-4b90-976e-581791d3fbcc.png)
 
+* CIFAR10
+![cifar10_train](https://user-images.githubusercontent.com/50166164/209892038-547fc80c-770f-4a8a-9efd-6c7b254f6294.png)
+![cifar10_valid](https://user-images.githubusercontent.com/50166164/209892052-271b495d-9712-4a04-acfe-b83d69072cc4.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
