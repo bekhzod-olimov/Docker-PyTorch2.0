@@ -84,4 +84,6 @@ python main.py --ds_name="cifar100"
 * Other arguments to change: 
 ![Capture](https://user-images.githubusercontent.com/50166164/209887801-0e6af75b-1a7b-4e3c-8b64-c37d02251a28.PNG)
 
+* Although it is mentioned that a model can benefit up to 38% speedup when trained using torch.compile() in PyTorch 2.0, in reality PyTorch 1.13-trained models are significantly faster.
+
 
