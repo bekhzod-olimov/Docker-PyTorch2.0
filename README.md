@@ -65,3 +65,8 @@ change the port of your current running server to the port you defined before, e
 
 ## PyTorch 2.0 Training 
 
+* Install required libraries:
+```python
+pip install requirements.txt
+```
+
