@@ -73,11 +73,11 @@ pip install requirements.txt
 ```python
 python main.py --ds_name="mnist"
 ```
-* Train a model using [CIFAR10 dataset]([https://en.wikipedia.org/wiki/MNIST_database](https://www.cs.toronto.edu/~kriz/cifar.html):
+* Train a model using [CIFAR10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html):
 ```python
 python main.py --ds_name="cifar10"
 ```
-* Train a model using [CIFAR100 dataset]([https://en.wikipedia.org/wiki/MNIST_database](https://www.cs.toronto.edu/~kriz/cifar.html):
+* Train a model using [CIFAR100 dataset](https://www.cs.toronto.edu/~kriz/cifar.html):
 ```python
 python main.py --ds_name="cifar100"
 ```
