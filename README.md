@@ -69,7 +69,7 @@ change the port of your current running server to the port you defined before, e
 ```python
 pip install requirements.txt
 ```
-* Train a model using MNIST dataset:
+* Train a model using [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database):
 ```python
 python main.py --ds_name="mnist"
 ```
