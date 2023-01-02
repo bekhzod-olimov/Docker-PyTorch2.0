@@ -93,6 +93,6 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
             saveModel(ds_name, model)
             best_accuracy = accuracy
             
-    torch.save(train_times, f'times/{ds_name}_train_times')
-    torch.save(valid_times, f'times/{ds_name}_valid_times')
-    torch.save(accs, f'times/{ds_name}_accs')      
+    torch.save(train_times, f'times2.0/{ds_name}_train_times')
+    torch.save(valid_times, f'times2.0/{ds_name}_valid_times')
+    torch.save(accs, f'times2.0/{ds_name}_accs')      
