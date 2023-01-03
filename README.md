@@ -86,12 +86,14 @@ python main.py --ds_name="cifar100"
 
 ## Speedup in PyTorch 2.0
 Although it is mentioned that a model can benefit up to [38% speedup](https://pytorch.org/get-started/pytorch-2.0/) (for [timm](https://github.com/rwightman/pytorch-image-models) models) when trained using torch.compile() in PyTorch 2.0, in reality model trained in PyTorch 1.13 are significantly faster in both training and validation.
+
 * MNIST
 ![mnist_train](https://user-images.githubusercontent.com/50166164/210288075-da296ba3-0149-4cb3-a507-7aa24c29a9ac.png)
 ![mnist_valid](https://user-images.githubusercontent.com/50166164/210288082-6857fab1-bafb-4d2b-9a9e-87972dcee1c8.png)
 
-
 * CIFAR10
+![cifar10_train](https://user-images.githubusercontent.com/50166164/210288126-f04138f6-aeff-4530-92c8-5024ad375e12.png)
+![cifar10_valid](https://user-images.githubusercontent.com/50166164/210288127-cd7f17ed-9eb7-4474-8276-cb49c510e42b.png)
 
 * CIFAR100
 ![cifar100_train](https://user-images.githubusercontent.com/50166164/209892103-d7d2366b-d48c-411c-8d2e-a5c8f0c689e5.png)
