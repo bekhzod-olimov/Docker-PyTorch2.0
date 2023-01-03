@@ -98,6 +98,11 @@ Although it is mentioned that a model can benefit up to [38% speedup](https://py
 ![cifar100_train](https://user-images.githubusercontent.com/50166164/209892103-d7d2366b-d48c-411c-8d2e-a5c8f0c689e5.png)
 ![cifar100_valid](https://user-images.githubusercontent.com/50166164/209892111-2234ce40-11b3-4d03-9a3d-f48dbc65e396.png)
 
+## Accuracy in PyTorch 2.0
+Accuracy difference between PyTorch 2.0 and PyTorch 1.13 is not very noticeable. The experiments on the three datasets did not show great changes in validation accuracy.
+
+
+
 
 
 
