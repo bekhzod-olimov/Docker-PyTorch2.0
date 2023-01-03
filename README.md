@@ -103,16 +103,13 @@ Although it is mentioned that a model can benefit up to [38% speedup](https://py
 Accuracy difference between PyTorch 2.0 and PyTorch 1.13 is not very noticeable. The experiments on the three datasets did not show great changes in validation accuracy.
 
 * MNIST
-![mnist_train](https://user-images.githubusercontent.com/50166164/210288075-da296ba3-0149-4cb3-a507-7aa24c29a9ac.png)
-![mnist_valid](https://user-images.githubusercontent.com/50166164/210288082-6857fab1-bafb-4d2b-9a9e-87972dcee1c8.png)
+![mnist_acc](https://user-images.githubusercontent.com/50166164/210288202-f7f233a9-f1b3-4997-b545-da627a38d407.png)
 
 * CIFAR10
-![cifar10_train](https://user-images.githubusercontent.com/50166164/210288126-f04138f6-aeff-4530-92c8-5024ad375e12.png)
-![cifar10_valid](https://user-images.githubusercontent.com/50166164/210288127-cd7f17ed-9eb7-4474-8276-cb49c510e42b.png)
+![cifar10_acc](https://user-images.githubusercontent.com/50166164/210288209-1787e4dc-d18a-4a3c-8105-603899664fab.png)
 
 * CIFAR100
-![cifar100_train](https://user-images.githubusercontent.com/50166164/210288164-a187d973-9e4e-4fac-ae29-7e5d0ffafe3d.png)
-![cifar100_valid](https://user-images.githubusercontent.com/50166164/210288165-658b1a6f-d228-45c3-baa4-641461a0eded.png)
+![cifar100_acc](https://user-images.githubusercontent.com/50166164/210288225-5210163c-065c-4656-b7c3-b97ebe07c09a.png)
 
 
 
