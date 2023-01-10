@@ -5,6 +5,18 @@ from torch.utils.data import Dataset, DataLoader
 
 def get_dl(ds_name, tfs, bs):
     
+    """ 
+    
+    Gets dataset name, transformations, and batch size and returns train, test dataloaders along with number of classes.
+    
+    Arguments:
+    ds_name - dataset name;
+    tfs - transformations;
+    bs - batch size. 
+    
+    """
+    
+    # Assertions for the dataset name
     assert ds_name == "cifar10" or ds_name == "cifar100" or ds_name == "mnist", "Please choose one of these datasets: mnist, cifar10, cifar100"
     
     if ds_name == "cifar10":
