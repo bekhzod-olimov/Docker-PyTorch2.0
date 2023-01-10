@@ -36,12 +36,23 @@ def get_dl(ds_name, tfs, bs):
         
         # Get number of classes
         num_classes = len(torch.unique(torch.tensor(trainset.targets).clone().detach()))
-        
+    
+    # CIFAR100 dataset
     elif ds_name == "cifar100":
+        
+        # Get trainset
         trainset = torchvision.datasets.CIFAR100(root='./data', train=True, download=True, transform=tfs)
+        
+        # Initialize train dataloader
         trainloader = torch.utils.data.DataLoader(trainset, batch_size=bs, shuffle=True)
+        
+        # Get testset
         testset = torchvision.datasets.CIFAR100(root='./data', train=False, download=True, transform=tfs)
+        
+        # Initialize test dataloader
         testloader = torch.utils.data.DataLoader(testset, batch_size=bs, shuffle=False)
+        
+        # Get number of classes
         num_classes = len(torch.unique(torch.tensor(trainset.targets).clone().detach()))
     
     elif ds_name == "mnist":
