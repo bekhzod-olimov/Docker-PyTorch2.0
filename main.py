@@ -19,8 +19,10 @@ def run(args):
     # Set float computation precision
     torch.set_float32_matmul_precision('high')
     
-    # Get Data
+    # Get transformations
     tfs = get_tfs(ds_name)
+    
+    # Get train and validation dataloaders along with number of classes
     tr_dl, val_dl, num_classes = get_dl(ds_name, tfs=tfs, bs=bs)
     
     # Get Model
