@@ -6,7 +6,7 @@ from train import train
 
 def run(args):
     
-    # Get train arguments    
+    # Get Train Arguments    
     model_name = args.model_name
     ds_name = args.ds_name
     epochs = args.epochs
@@ -16,26 +16,26 @@ def run(args):
     argstr = yaml.dump(args.__dict__, default_flow_style=False)
     print(f"\nTraining Arguments:\n{argstr}")
     
-    # Set float computation precision
+    # Set Float Computation Precision
     torch.set_float32_matmul_precision('high')
     
-    # Get transformations
+    # Get Transformations
     tfs = get_tfs(ds_name)
     
     # Get train and validation dataloaders along with number of classes
     tr_dl, val_dl, num_classes = get_dl(ds_name, tfs=tfs, bs=bs)
     
-    # Get Model
-    m = timm.create_model(model_name, pretrained=True, num_classes=num_classes)
-    model = m
-    # model = torch.compile(m)
+    # Get Train Model
+    model = timm.create_model(model_name, pretrained = True, num_classes = num_classes)
     
     # Get Training Details
     criterion = torch.nn.CrossEntropyLoss()
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr)
      
-    # Train model    
+    # Set Initial Best Accuracy    
     best_accuracy = 0.
+    
+    # Train Model
     train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epochs, best_accuracy, ds_name)   
     
 if __name__ == "__main__":
@@ -50,4 +50,3 @@ if __name__ == "__main__":
     args = parser.parse_args() 
     
     run(args) 
-    
