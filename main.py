@@ -6,15 +6,17 @@ from train import train
 
 def run(args):
     
+    # Get train arguments    
     model_name = args.model_name
     ds_name = args.ds_name
     epochs = args.epochs
     device = args.device
     bs = args.batch_size
     lr = args.learning_rate    
-    
     argstr = yaml.dump(args.__dict__, default_flow_style=False)
     print(f"\nTraining Arguments:\n{argstr}")
+    
+    # Set float computation precision
     torch.set_float32_matmul_precision('high')
     
     # Get Data
