@@ -50,12 +50,13 @@ def validation(model, val_dl, device, ds_name):
             # Get images and labels
             images, labels = batch
             
-            # get 3 channels for mnist dataset
+            # Create 3 channel input for MNIST dataset
             if ds_name == "mnist":
                 images_copy = images
-                images = torch.cat((images, images_copy), dim=1)
-                images = torch.cat((images, images_copy), dim=1)
+                images = torch.cat((images, images_copy), dim = 1)
+                images = torch.cat((images, images_copy), dim = 1)
                 
+            # Move images and labels to gpu
             images, labels = images.to(device), labels.to(device)
             
             images, labels = images.to(device), labels.to(device)
