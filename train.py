@@ -35,7 +35,10 @@ def validation(model, val_dl, device, ds_name):
 
     """
     
+    # Switch to evaluation model
     model.eval()
+    
+    # Set initial accuracy and total number of samples
     accuracy, total = 0, 0
 
     with torch.no_grad():
