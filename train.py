@@ -28,9 +28,11 @@ def validation(model, val_dl, device, ds_name):
     performs one validation step and returns accuracy. 
     
     Arguments:
-    ds_name - dataset name;
-    model - a trained model.
-    
+    model - a trained model;
+    val_dl - validation dataloader;
+    device - gpu type;
+    ds_name - dataset name.
+
     """
     
     model.eval()
