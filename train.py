@@ -147,10 +147,14 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
             # Add mini-batch loss to the total loss
             running_loss += loss.item()
 
-        # Compute and print the average accuracy fo this epoch when tested over all 10000 test images
+        # Add one-epoch train time to the list
         train_times.append(time() - train_tic)
         print(f"Training of epoch {epoch+1} is completed in {time() - train_tic:.3f} secs!\n")
+        
+        # Start validation process
         valid_tic = time()
+        
+        # Get validation accuracy
         accuracy = validation(model, val_dl, device, ds_name)
         valid_times.append(time() - valid_tic)
         accs.append(accuracy)
