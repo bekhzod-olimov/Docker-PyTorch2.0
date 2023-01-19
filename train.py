@@ -113,17 +113,20 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
         # Set initial values for loss and accuracy
         running_loss, running_acc = 0, 0
         
+        # Go through the train dataloader
         for i, batch in tqdm(enumerate(tr_dl, 0)):
             
-            # get the inputs
+            # Get images and labels
             images, labels = batch
             
-            # get 3 channels for mnist dataset
+            # Make 3 channel input for the MNIST dataset
             if ds_name == "mnist":
+                
                 images_copy = images
                 images = torch.cat((images, images_copy), dim=1)
                 images = torch.cat((images, images_copy), dim=1)
-                
+            
+            # Move images and labels to gpu
             images, labels = images.to(device), labels.to(device)
 
             # zero the parameter gradients
