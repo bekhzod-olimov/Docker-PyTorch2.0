@@ -9,10 +9,12 @@ def saveModel(ds_name, model):
     Gets dataset name along with a model and saves it as the best model.
     
     Arguments:
-    ds_name
+    ds_name - dataset name;
+    model - a trained model.
     
     """
     
+    # Set the path to save the model
     path = f"best_models/{ds_name}_best_model.pth"
     torch.save(model.state_dict(), path)
 
