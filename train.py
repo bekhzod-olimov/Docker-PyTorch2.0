@@ -68,9 +68,10 @@ def validation(model, val_dl, device, ds_name):
             # Add batch size to the total number of samples
             total += labels.size(0)
             
+            # Compute accuracy over the mini-batch
             accuracy += (predicted == labels).sum().item()
     
-    # compute the accuracy over all test images
+    # Compute accuracy over the whole dataloader
     accuracy = (100 * accuracy / total)
     
     return accuracy
