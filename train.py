@@ -59,12 +59,15 @@ def validation(model, val_dl, device, ds_name):
             # Move images and labels to gpu
             images, labels = images.to(device), labels.to(device)
             
-            images, labels = images.to(device), labels.to(device)
-            # run the model on the test set to predict labels
+            # Get model predictions
             outputs = model(images)
-            # the label with the highest energy will be our prediction
+            
+            # Get the prediction with the max value
             _, predicted = torch.max(outputs.data, 1)
+            
+            # Add batch size to the total number of samples
             total += labels.size(0)
+            
             accuracy += (predicted == labels).sum().item()
     
     # compute the accuracy over all test images
