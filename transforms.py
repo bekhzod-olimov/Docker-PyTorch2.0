@@ -14,7 +14,8 @@ def get_tfs(ds_name):
     # CIFAR10 and CIFAR100
     if ds_name == "cifar10" or ds_name == "cifar100":
         
-        transform = tfs.Compose([tfs.ToTensor(), tfs.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+        # Tensor and Standard Normalization
+        transform = tfs.Compose([tfs.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)), tfs.ToTensor()])
         
         return transform
     
