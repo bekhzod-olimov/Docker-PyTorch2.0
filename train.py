@@ -97,9 +97,11 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
 
     """
 
-    # Define your execution device
+    # Define the gpu device and move the model to the gpu
     print(f"The model will be running on {device} device")
     model.to(device)
+    
+    # Initialize lists to track train metrics
     train_times, valid_times, accs = [], [], []
     
     for epoch in range(epochs):  # loop over the dataset multiple times
