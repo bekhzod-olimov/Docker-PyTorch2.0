@@ -86,8 +86,12 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
     
     Arguments:
     model - a trained model;
-    val_dl - validation dataloader;
+    tr_dl - train dataloader;
+    num_classes - number of classes in the dataset;
+    criterion - loss function;
+    optimizer - optimizer to update the weights;
     device - gpu type;
+    epo
     ds_name - dataset name.
 
     """
