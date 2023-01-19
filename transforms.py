@@ -23,6 +23,6 @@ def get_tfs(ds_name):
     elif ds_name == "mnist":
         
         # Tensor and Standard Normalization
-        transform = tfs.Compose([tfs.ToTensor(), tfs.Normalize((0.5), (0.5))])
+        transform = tfs.Compose([tfs.Normalize((0.5), (0.5)), tfs.ToTensor()])
         
         return transform
