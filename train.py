@@ -77,6 +77,20 @@ def validation(model, val_dl, device, ds_name):
     return accuracy
     
 def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epochs, best_accuracy, ds_name):
+    
+    """
+    
+    Gets a number of train arguments and trains the model
+    for the pre-defined number of epochs.
+    performs one validation step and returns accuracy. 
+    
+    Arguments:
+    model - a trained model;
+    val_dl - validation dataloader;
+    device - gpu type;
+    ds_name - dataset name.
+
+    """
 
     # Define your execution device
     print(f"The model will be running on {device} device")
