@@ -104,10 +104,13 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
     # Initialize lists to track train metrics
     train_times, valid_times, accs = [], [], []
     
-    for epoch in range(epochs):  # loop over the dataset multiple times
-        
-        
+    # Start train process
+    for epoch in range(epochs): 
+
+        # Set start train time
         train_tic = time()
+        
+        # Set initial values for loss and accuracy
         running_loss, running_acc = 0, 0
         
         for i, batch in tqdm(enumerate(tr_dl, 0)):
