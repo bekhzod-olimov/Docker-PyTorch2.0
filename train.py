@@ -41,10 +41,13 @@ def validation(model, val_dl, device, ds_name):
     # Set initial accuracy and total number of samples
     accuracy, total = 0, 0
 
+    # Turn off gradient computation
     with torch.no_grad():
         
+        # Go through the validation dataloader
         for i, batch in tqdm(enumerate(val_dl)):
 
+            # Get images and labels
             images, labels = batch
             
             # get 3 channels for mnist dataset
