@@ -91,7 +91,8 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
     criterion - loss function;
     optimizer - optimizer to update the weights;
     device - gpu type;
-    epo
+    epochs - number of epochs to train the model;
+    best_accuracy - initial value for the best accuracy;
     ds_name - dataset name.
 
     """
