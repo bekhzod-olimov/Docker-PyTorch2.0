@@ -156,17 +156,23 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
         
         # Get validation accuracy
         accuracy = validation(model, val_dl, device, ds_name)
-        valid_times.append(time() - valid_tic)
-        accs.append(accuracy)
-        print(f"Validation of epoch {epoch+1} is completed in {time() - valid_tic:.3f} secs!\n")
         
+        # Add one-epoch validation time to the list
+        valid_times.append(time() - valid_tic)
+        
+        # Add validation accuracy to the list
+        accs.append(accuracy)
+        
+        # Print train results
+        print(f"Validation of epoch {epoch+1} is completed in {time() - valid_tic:.3f} secs!\n")
         print(f"For epoch {epoch+1} the validation accuracy over the whole validation set is {accuracy:.2f}%\n")
         
-        # we want to save the model if the accuracy is the best
+        # Save the model with the best accuracy 
         if accuracy > best_accuracy:
             saveModel(ds_name, model)
             best_accuracy = accuracy
             
+    # Save train times, validation times, and accuracy         
     torch.save(train_times, f'times2.0/{ds_name}_train_times')
     torch.save(valid_times, f'times2.0/{ds_name}_valid_times')
     torch.save(accs, f'times2.0/{ds_name}_accs')      
