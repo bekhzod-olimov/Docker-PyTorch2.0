@@ -22,6 +22,17 @@ def saveModel(ds_name, model):
 
 def validation(model, val_dl, device, ds_name):
     
+    """
+    
+    Gets a model, validation dataloader, device type, and dataset name 
+    performs one validation step and returns accuracy. 
+    
+    Arguments:
+    ds_name - dataset name;
+    model - a trained model.
+    
+    """
+    
     model.eval()
     accuracy, total = 0, 0
 
