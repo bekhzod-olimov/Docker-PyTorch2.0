@@ -16,6 +16,8 @@ def saveModel(ds_name, model):
     
     # Set the path to save the model
     path = f"best_models/{ds_name}_best_model.pth"
+    
+    # Save the model state_dictionary
     torch.save(model.state_dict(), path)
 
 def validation(model, val_dl, device, ds_name):
