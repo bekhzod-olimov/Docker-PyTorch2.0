@@ -4,6 +4,15 @@ from time import time
 
 def saveModel(ds_name, model):
     
+    """
+    
+    Gets dataset name along with a model and saves it as the best model.
+    
+    Arguments:
+    ds_name
+    
+    """
+    
     path = f"best_models/{ds_name}_best_model.pth"
     torch.save(model.state_dict(), path)
 
