@@ -129,17 +129,23 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
             # Move images and labels to gpu
             images, labels = images.to(device), labels.to(device)
 
-            # zero the parameter gradients
+            # Zero the parameter gradients
             optimizer.zero_grad()
-            # predict classes using images from the training set
+            
+            # Get model predictions
             outputs = model(images)
-            # compute the loss based on model output and real labels
+            
+            # Comput loss value
             loss = criterion(outputs, labels)
-            # backpropagate the loss
+            
+            # Backpropagation
             loss.backward()
-            # adjust parameters based on the calculated gradients
+            
+            # Update the model weights
             optimizer.step()
-            running_loss += loss.item()     # extract the loss value
+            
+            # Add mini-batch loss to the total loss
+            running_loss += loss.item()
 
         # Compute and print the average accuracy fo this epoch when tested over all 10000 test images
         train_times.append(time() - train_tic)
