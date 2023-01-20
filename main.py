@@ -43,12 +43,12 @@ def run(args):
 if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description='PyTorch 2.0 Model Training Arguments')
-    parser.add_argument("-bs", "--batch_size", type=int, default=512, help="Batch size")
-    parser.add_argument("-d", "--device", type=str, default='cuda:3', help="GPU device number")
-    parser.add_argument("-mn", "--model_name", type=str, default='efficientnet_b0', help="Model name for training")
-    parser.add_argument("-dn", "--ds_name", type=str, default='cifar10', help="Dataset name for training")
-    parser.add_argument("-lr", "--learning_rate", type=float, default=1e-3, help="Learning rate value")
-    parser.add_argument("-e", "--epochs", type=int, default=25, help="Number of epochs")
+    parser.add_argument("-bs", "--batch_size", type = int, default = 512, help = "Batch size")
+    parser.add_argument("-d", "--device", type = str, default = 'cuda:3', help = "GPU device number")
+    parser.add_argument("-mn", "--model_name", type = str, default = 'efficientnet_b0', help = "Model name for training")
+    parser.add_argument("-dn", "--ds_name", type = str, default = 'cifar10', help = "Dataset name for training")
+    parser.add_argument("-lr", "--learning_rate", type = float, default = 1e-3, help = "Learning rate value")
+    parser.add_argument("-e", "--epochs", type = int, default = 25, help = "Number of epochs")
     args = parser.parse_args() 
     
     run(args) 
