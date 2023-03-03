@@ -1,5 +1,4 @@
 # Import Libraries
-
 import argparse, torch, yaml, os, timm
 from dataset import get_dl
 from transforms import get_tfs
@@ -7,6 +6,15 @@ import torchvision.models as models
 from train import train
 
 def run(args):
+    
+    """
+    This function gets parsed arguments and trains the model.
+    
+    Arguments:
+        
+        args - parsed arguments, Parser object;
+    
+    """
     
     # Get Train Arguments    
     model_name = args.model_name
