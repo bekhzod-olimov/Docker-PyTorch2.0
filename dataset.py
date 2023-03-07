@@ -1,5 +1,5 @@
-import torch
-import torchvision
+# Import libraries
+import torch, torchvision
 import torchvision.transforms as transforms
 from torch.utils.data import Dataset, DataLoader
 
@@ -7,12 +7,13 @@ def get_dl(ds_name, tfs, bs):
     
     """ 
     
-    Gets dataset name, transformations, and batch size and returns train, test dataloaders along with number of classes.
+    This function gets dataset name, transformations, and batch size and returns train, test dataloaders along with number of classes.
     
     Arguments:
-    ds_name - dataset name;
-    tfs - transformations;
-    bs - batch size. 
+    
+        ds_name - dataset name;
+        tfs - transformations;
+        bs - batch size. 
     
     """
     
