@@ -26,14 +26,15 @@ def validation(model, val_dl, device, ds_name):
     
     """
     
-    Gets a model, validation dataloader, device type, and dataset name 
+    This function gets a model, validation dataloader, device type, and dataset name 
     performs one validation step and returns accuracy. 
     
     Arguments:
-    model - a trained model;
-    val_dl - validation dataloader;
-    device - gpu type;
-    ds_name - dataset name.
+    
+        model - a trained model;
+        val_dl - validation dataloader;
+        device - gpu type;
+        ds_name - dataset name.
 
     """
     
@@ -74,9 +75,8 @@ def validation(model, val_dl, device, ds_name):
             accuracy += (predicted == labels).sum().item()
     
     # Compute accuracy over the whole dataloader
-    accuracy = (100 * accuracy / total)
     
-    return accuracy
+    return 100 * accuracy / total
     
 def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epochs, best_accuracy, ds_name):
     
