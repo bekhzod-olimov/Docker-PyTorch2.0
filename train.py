@@ -82,20 +82,21 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
     
     """
     
-    Gets a number of train arguments and trains the model
-    for the pre-defined number of epochs.
+    This function gets a number of train arguments and trains the model
+    for the pre-defined number of epochs;
     performs one validation step and returns accuracy. 
     
     Arguments:
-    model - a trained model;
-    tr_dl - train dataloader;
-    num_classes - number of classes in the dataset;
-    criterion - loss function;
-    optimizer - optimizer to update the weights;
-    device - gpu type;
-    epochs - number of epochs to train the model;
-    best_accuracy - initial value for the best accuracy;
-    ds_name - dataset name.
+    
+        model - a trained model;
+        tr_dl - train dataloader;
+        num_classes - number of classes in the dataset;
+        criterion - loss function;
+        optimizer - optimizer to update the weights;
+        device - gpu type;
+        epochs - number of epochs to train the model;
+        best_accuracy - initial value for the best accuracy;
+        ds_name - dataset name.
 
     """
 
@@ -125,8 +126,8 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
             if ds_name == "mnist":
                 
                 images_copy = images
-                images = torch.cat((images, images_copy), dim=1)
-                images = torch.cat((images, images_copy), dim=1)
+                images = torch.cat((images, images_copy), dim = 1)
+                images = torch.cat((images, images_copy), dim = 1)
             
             # Move images and labels to gpu
             images, labels = images.to(device), labels.to(device)
@@ -177,4 +178,4 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
     # Save train times, validation times, and accuracy         
     torch.save(train_times, f'times2.0/{ds_name}_train_times')
     torch.save(valid_times, f'times2.0/{ds_name}_valid_times')
-    torch.save(accs, f'times2.0/{ds_name}_accs')      
+    torch.save(accs, f'times2.0/{ds_name}_accs')
