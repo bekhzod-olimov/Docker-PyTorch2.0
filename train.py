@@ -1,3 +1,4 @@
+# Import libraries
 import timm, torch
 from tqdm import tqdm
 from time import time
@@ -6,11 +7,12 @@ def saveModel(ds_name, model):
     
     """
     
-    Gets dataset name along with a model and saves it as the best model.
+    This function gets dataset name along with a model and saves it as the best model.
     
     Arguments:
-    ds_name - dataset name;
-    model - a trained model.
+    
+        ds_name - dataset name;
+        model - a trained model.
     
     """
     
