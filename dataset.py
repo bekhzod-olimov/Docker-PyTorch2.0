@@ -42,16 +42,16 @@ def get_dl(ds_name, tfs, bs):
     elif ds_name == "cifar100":
         
         # Get trainset
-        trainset = torchvision.datasets.CIFAR100(root = './data', train=True, download=True, transform=tfs)
+        trainset = torchvision.datasets.CIFAR100(root = './data', train = True, download = True, transform = tfs)
         
         # Initialize train dataloader
-        trainloader = torch.utils.data.DataLoader(trainset, batch_size=bs, shuffle=True)
+        trainloader = torch.utils.data.DataLoader(trainset, batch_size=bs, shuffle = True)
         
         # Get testset
-        testset = torchvision.datasets.CIFAR100(root='./data', train=False, download=True, transform=tfs)
+        testset = torchvision.datasets.CIFAR100(root = './data', train = False, download = True, transform = tfs)
         
         # Initialize test dataloader
-        testloader = torch.utils.data.DataLoader(testset, batch_size=bs, shuffle=False)
+        testloader = torch.utils.data.DataLoader(testset, batch_size = bs, shuffle = False)
         
         # Get number of classes
         num_classes = len(torch.unique(torch.tensor(trainset.targets).clone().detach()))
@@ -60,16 +60,16 @@ def get_dl(ds_name, tfs, bs):
     elif ds_name == "mnist":
         
         # Get trainset
-        trainset = torchvision.datasets.MNIST(root='./data', train=True, download=True, transform=tfs)
+        trainset = torchvision.datasets.MNIST(root='./data', train = True, download = True, transform = tfs)
         
         # Initialize train dataloader
-        trainloader = torch.utils.data.DataLoader(trainset, batch_size=bs, shuffle=True)
+        trainloader = torch.utils.data.DataLoader(trainset, batch_size = bs, shuffle = True)
         
         # Get testset
-        testset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=tfs)
+        testset = torchvision.datasets.MNIST(root='./data', train = False, download = True, transform = tfs)
         
         # Initialize test dataloader
-        testloader = torch.utils.data.DataLoader(testset, batch_size=bs, shuffle=False)
+        testloader = torch.utils.data.DataLoader(testset, batch_size = bs, shuffle = False)
         
         # Get number of classes
         num_classes = len(torch.unique(torch.tensor(trainset.targets).clone().detach()))
