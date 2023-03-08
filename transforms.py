@@ -1,13 +1,15 @@
+# Import libraries
 import torchvision.transforms as tfs
 
 def get_tfs(ds_name):
     
     """
     
-    Gets dataset name and returns transforms.
+    This function gets dataset name and returns transforms.
     
     Arguments:
-    ds_name - dataset name.
+    
+        ds_name - dataset name.
     
     """
     
