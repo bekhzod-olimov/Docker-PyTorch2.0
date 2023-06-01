@@ -30,10 +30,10 @@ def validation(model, val_dl, device, ds_name):
     
     Parameters:
     
-        model        - a trained model;
-        val_dl       - validation dataloader;
-        device       - gpu type;
-        ds_name      - dataset name.
+        model        - a trained model, timm model object;
+        val_dl       - validation dataloader, torch dataloader object;
+        device       - gpu type, str;
+        ds_name      - dataset name, str.
 
     """
     
@@ -55,8 +55,7 @@ def validation(model, val_dl, device, ds_name):
             # Create 3 channel input for MNIST dataset
             if ds_name == "mnist":
                 images_copy = images
-                images = torch.cat((images, images_copy), dim = 1)
-                images = torch.cat((images, images_copy), dim = 1)
+                images = torch.cat((images, images_copy), dim = 1); images = torch.cat((images, images_copy), dim = 1)
                 
             # Move images and labels to gpu
             images, labels = images.to(device), labels.to(device)
@@ -74,16 +73,13 @@ def validation(model, val_dl, device, ds_name):
             accuracy += (predicted == labels).sum().item()
     
     # Compute accuracy over the whole dataloader
-    
     return 100 * accuracy / total
     
 def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epochs, best_accuracy, ds_name):
     
     """
     
-    This function gets a number of train arguments and trains the model
-    for the pre-defined number of epochs;
-    performs one validation step and returns accuracy. 
+    This function gets several parameters, performs one train epoch and one validation epoch and returns accuracy. 
     
     Parameters:
     
