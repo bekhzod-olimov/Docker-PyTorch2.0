@@ -34,6 +34,10 @@ def validation(model, val_dl, device, ds_name):
         val_dl       - validation dataloader, torch dataloader object;
         device       - gpu type, str;
         ds_name      - dataset name, str.
+        
+    Output:
+    
+        accuracy     - accuracy percentage on the validation dataloader, float.
 
     """
     
@@ -83,15 +87,15 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
     
     Parameters:
     
-        model - a trained model;
-        tr_dl - train dataloader;
-        num_classes - number of classes in the dataset;
-        criterion - loss function;
-        optimizer - optimizer to update the weights;
-        device - gpu type;
-        epochs - number of epochs to train the model;
-        best_accuracy - initial value for the best accuracy;
-        ds_name - dataset name.
+        model            - a trained model, timm model object;
+        tr_dl            - train dataloader, torch dataloader object;
+        num_classes      - number of classes in the dataset, int;
+        criterion        - loss function, torch object;
+        optimizer        - optimizer to update the weights, torch optimizer object;
+        device           - gpu type, str;
+        epochs           - number of epochs to train the model, int;
+        best_accuracy    - initial value for the best accuracy, float;
+        ds_name          - dataset name, str.
 
     """
 
