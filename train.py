@@ -9,10 +9,10 @@ def saveModel(ds_name, model):
     
     This function gets dataset name along with a model and saves it as the best model.
     
-    Arguments:
+    Parameters:
     
-        ds_name - dataset name;
-        model - a trained model.
+        ds_name     - dataset name, str;
+        model       - a trained model, timm model object.
     
     """
     
@@ -26,15 +26,14 @@ def validation(model, val_dl, device, ds_name):
     
     """
     
-    This function gets a model, validation dataloader, device type, and dataset name 
-    performs one validation step and returns accuracy. 
+    This function gets several parameters and performs one validation step and returns accuracy. 
     
-    Arguments:
+    Parameters:
     
-        model - a trained model;
-        val_dl - validation dataloader;
-        device - gpu type;
-        ds_name - dataset name.
+        model        - a trained model;
+        val_dl       - validation dataloader;
+        device       - gpu type;
+        ds_name      - dataset name.
 
     """
     
@@ -86,7 +85,7 @@ def train(model, tr_dl, val_dl, num_classes, criterion, optimizer, device, epoch
     for the pre-defined number of epochs;
     performs one validation step and returns accuracy. 
     
-    Arguments:
+    Parameters:
     
         model - a trained model;
         tr_dl - train dataloader;
