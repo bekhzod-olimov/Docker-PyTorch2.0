@@ -82,15 +82,15 @@ python main.py --ds_name="cifar10"
 python main.py --ds_name="cifar100"
 ```
 
+* Parameters to change: 
+![Capture](https://user-images.githubusercontent.com/50166164/209887801-0e6af75b-1a7b-4e3c-8b64-c37d02251a28.PNG)
+
 ## PyTorch Lightning Training
 
 * Train a model using custom dataset:
 ```python
 python pl_main.py
 ```
-
-* Other arguments to change: 
-![Capture](https://user-images.githubusercontent.com/50166164/209887801-0e6af75b-1a7b-4e3c-8b64-c37d02251a28.PNG)
 
 ## Speedup in PyTorch 2.0
 Although it is mentioned that a model can benefit up to [38% speedup](https://pytorch.org/get-started/pytorch-2.0/) (for [timm](https://github.com/rwightman/pytorch-image-models) models) when trained using torch.compile() in PyTorch 2.0, in reality model trained in PyTorch 1.13 are significantly faster in both training and validation.
