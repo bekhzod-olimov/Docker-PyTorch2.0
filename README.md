@@ -81,7 +81,6 @@ python main.py --ds_name="cifar10"
 ```python
 python main.py --ds_name="cifar100"
 ```
-
 * Parameters to change: 
 ![Capture](https://user-images.githubusercontent.com/50166164/209887801-0e6af75b-1a7b-4e3c-8b64-c37d02251a28.PNG)
 
@@ -91,6 +90,9 @@ python main.py --ds_name="cifar100"
 ```python
 python pl_main.py
 ```
+
+* Parameters to change:
+![image](https://github.com/bekhzod-olimov/Docker-PyTorch2.0/assets/50166164/271b97f1-f0cd-430d-b6b3-a2863df3f71c)
 
 ## Speedup in PyTorch 2.0
 Although it is mentioned that a model can benefit up to [38% speedup](https://pytorch.org/get-started/pytorch-2.0/) (for [timm](https://github.com/rwightman/pytorch-image-models) models) when trained using torch.compile() in PyTorch 2.0, in reality model trained in PyTorch 1.13 are significantly faster in both training and validation.
