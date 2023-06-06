@@ -81,6 +81,14 @@ python main.py --ds_name="cifar10"
 ```python
 python main.py --ds_name="cifar100"
 ```
+
+## PyTorch Lightning Training
+
+* Train a model using custom dataset:
+```python
+python pl_main.py
+```
+
 * Other arguments to change: 
 ![Capture](https://user-images.githubusercontent.com/50166164/209887801-0e6af75b-1a7b-4e3c-8b64-c37d02251a28.PNG)
 
