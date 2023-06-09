@@ -105,6 +105,10 @@ tar -xvf stats/stats_1.13.tar
 tar -xvf stats/stats_2.0.tar
 ```
 
+* [GHIM-10K](https://www.kaggle.com/datasets/guohey/ghim10k)
+
+
+
 * MNIST
 ![mnist_train](https://user-images.githubusercontent.com/50166164/210288075-da296ba3-0149-4cb3-a507-7aa24c29a9ac.png)
 ![mnist_valid](https://user-images.githubusercontent.com/50166164/210288082-6857fab1-bafb-4d2b-9a9e-87972dcee1c8.png)
