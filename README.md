@@ -106,7 +106,9 @@ tar -xvf stats/stats_2.0.tar
 ```
 
 * [GHIM-10K](https://www.kaggle.com/datasets/guohey/ghim10k)
-
+![train_times](https://github.com/bekhzod-olimov/Docker-PyTorch2.0/assets/50166164/546b8cbd-10c4-415d-9971-5515a0c43b68)
+![valid_times](https://github.com/bekhzod-olimov/Docker-PyTorch2.0/assets/50166164/5423aeaa-fad0-4b9c-b0cc-76420a4e69fd)
+![acc](https://github.com/bekhzod-olimov/Docker-PyTorch2.0/assets/50166164/d5447edf-157f-423e-8a19-a21f9d649ed0)
 
 
 * MNIST
