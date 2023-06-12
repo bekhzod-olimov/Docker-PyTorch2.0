@@ -1,7 +1,11 @@
 # Import libraries
-import torch, torchvision
-import torchvision.transforms as transforms
-from torch.utils.data import Dataset, DataLoader
+import torch, torchvision, os
+from torch.utils.data import random_split, Dataset, DataLoader
+from torch import nn
+from PIL import Image
+from torchvision import transforms as T
+from torchvision.datasets import ImageFolder
+torch.manual_seed(2023)
 
 def get_dl(ds_name, tfs, bs):
     
@@ -78,14 +82,6 @@ def get_dl(ds_name, tfs, bs):
     print(f"{ds_name} has {num_classes} classes!")
     
     return trainloader, testloader, num_classes
-
-import torch, os
-from torch.utils.data import random_split, Dataset, DataLoader
-from torch import nn
-from PIL import Image
-from torchvision import transforms as T
-from torchvision.datasets import ImageFolder
-torch.manual_seed(2023)
 
 class CustomDataloader(nn.Module):
     def __init__(self, root, transformations, bs, im_files = [".jpg", ".png", ".jpeg"], data_split = [0.8, 0.1, 0.1]):
