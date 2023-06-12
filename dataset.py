@@ -13,11 +13,17 @@ def get_dl(ds_name, tfs, bs):
     
     This function gets dataset name, transformations, and batch size and returns train, test dataloaders along with number of classes.
     
-    Arguments:
+    Parameters:
     
-        ds_name - dataset name;
-        tfs - transformations;
-        bs - batch size. 
+        ds_name        - dataset name, str;
+        tfs            - transformations, torchvision transforms object;
+        bs             - batch size, int. 
+        
+    Outputs:
+    
+        trainloader    - train dataloader, torch dataloader object;
+        testloader     - test dataloader, torch dataloader object;
+        num_classes    - number of classes in the dataset, int.
     
     """
     
