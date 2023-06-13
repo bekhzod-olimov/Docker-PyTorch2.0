@@ -90,6 +90,21 @@ def get_dl(ds_name, tfs, bs):
     return trainloader, testloader, num_classes
 
 class CustomDataloader(nn.Module):
+    
+    """
+    
+    This class gets several parameters and returns train, validation, and test dataloaders.
+    
+    Parameters:
+    
+        root              - path to data with images, str;
+        transformations   - transformations to be applied, torchvision transforms object;
+        bs                - mini batch size of the dataloaders, int;
+        im_files          - valid image extensions, list -> str;
+        data_split        - data split information, list -> float.
+    
+    """
+    
     def __init__(self, root, transformations, bs, im_files = [".jpg", ".png", ".jpeg"], data_split = [0.8, 0.1, 0.1]):
         super().__init__()
         
