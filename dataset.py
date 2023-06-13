@@ -108,15 +108,26 @@ class CustomDataloader(nn.Module):
     def __init__(self, root, transformations, bs, im_files = [".jpg", ".png", ".jpeg"], data_split = [0.8, 0.1, 0.1]):
         super().__init__()
         
+        # Assertion
         assert sum(data_split) == 1, "Data split elements' sum must be exactly 1"
+        
+        # Get the class arguments
         self.im_files, self.bs = im_files, bs
+        
+        # Get dataset from the root folder and apply image transformations
         self.ds = ImageFolder(root = root, transform = transformations, is_valid_file = self.check_validity)
         
+        # Get total number of images in the dataset
         self.total_ims = len(self.ds)
-        tr_len = int(self.total_ims * data_split[0])
-        val_len = int(self.total_ims * data_split[1])
+        
+        # Data split
+        tr_len, val_len = int(self.total_ims * data_split[0]), int(self.total_ims * data_split[1])
         test_len = self.total_ims - (tr_len + val_len)
+        
+        # Get train, validation, and test datasets based on the data split information
         self.tr_ds, self.val_ds, self.test_ds = random_split(dataset = self.ds, lengths = [tr_len, val_len, test_len])
+        
+        # Create datasets dictionary for later use and print datasets information
         self.all_ds = {"train": self.tr_ds, "validation": self.val_ds, "test": self.test_ds}
         for idx, (key, value) in enumerate(self.all_ds.items()): print(f"There are {len(value)} images in the {key} dataset.")
         
