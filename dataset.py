@@ -131,9 +131,24 @@ class CustomDataloader(nn.Module):
         self.all_ds = {"train": self.tr_ds, "validation": self.val_ds, "test": self.test_ds}
         for idx, (key, value) in enumerate(self.all_ds.items()): print(f"There are {len(value)} images in the {key} dataset.")
         
+    # Function to get data length
     def __len__(self): return self.total_ims
 
     def check_validity(self, path):
+        
+        """
+        
+        This function gets an image path and checks whether it is a valid image file or not.
+        
+        Parameter:
+        
+            path       - an image path, str.
+            
+        Output:
+        
+            is_valid   - whether the image in the input path is a valid image file or not, bool  
+        
+        """
         if os.path.splitext(path)[-1] in self.im_files: return True
         return False
     
