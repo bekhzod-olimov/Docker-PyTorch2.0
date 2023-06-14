@@ -1,10 +1,7 @@
 # Import libraries
 import torch, torchvision, os
 from torch.utils.data import random_split, Dataset, DataLoader
-from torch import nn
-from PIL import Image
-from torchvision import transforms as T
-from torchvision.datasets import ImageFolder
+from torch import nn; from PIL import Image; from torchvision import transforms as T; from torchvision.datasets import ImageFolder
 torch.manual_seed(2023)
 
 def get_dl(ds_name, tfs, bs):
@@ -34,13 +31,13 @@ def get_dl(ds_name, tfs, bs):
     if ds_name == "cifar10":
         
         # Get trainset
-        trainset = torchvision.datasets.CIFAR10(root = './data', train = True, download = True, transform = tfs)
+        trainset = torchvision.datasets.CIFAR10(root = "./data", train = True, download = True, transform = tfs)
         
         # Initialize train dataloader
         trainloader = torch.utils.data.DataLoader(trainset, batch_size = bs, shuffle = True)
         
         # Get testset
-        testset = torchvision.datasets.CIFAR10(root = './data', train = False, download = True, transform = tfs)
+        testset = torchvision.datasets.CIFAR10(root = "./data", train = False, download = True, transform = tfs)
         
         # Initialize test dataloader
         testloader = torch.utils.data.DataLoader(testset, batch_size = bs, shuffle = False)
@@ -52,13 +49,13 @@ def get_dl(ds_name, tfs, bs):
     elif ds_name == "cifar100":
         
         # Get trainset
-        trainset = torchvision.datasets.CIFAR100(root = './data', train = True, download = True, transform = tfs)
+        trainset = torchvision.datasets.CIFAR100(root = "./data", train = True, download = True, transform = tfs)
         
         # Initialize train dataloader
-        trainloader = torch.utils.data.DataLoader(trainset, batch_size=bs, shuffle = True)
+        trainloader = torch.utils.data.DataLoader(trainset, batch_size = bs, shuffle = True)
         
         # Get testset
-        testset = torchvision.datasets.CIFAR100(root = './data', train = False, download = True, transform = tfs)
+        testset = torchvision.datasets.CIFAR100(root = "./data", train = False, download = True, transform = tfs)
         
         # Initialize test dataloader
         testloader = torch.utils.data.DataLoader(testset, batch_size = bs, shuffle = False)
@@ -70,13 +67,13 @@ def get_dl(ds_name, tfs, bs):
     elif ds_name == "mnist":
         
         # Get trainset
-        trainset = torchvision.datasets.MNIST(root='./data', train = True, download = True, transform = tfs)
+        trainset = torchvision.datasets.MNIST(root = "./data", train = True, download = True, transform = tfs)
         
         # Initialize train dataloader
         trainloader = torch.utils.data.DataLoader(trainset, batch_size = bs, shuffle = True)
         
         # Get testset
-        testset = torchvision.datasets.MNIST(root='./data', train = False, download = True, transform = tfs)
+        testset = torchvision.datasets.MNIST(root = "./data", train = False, download = True, transform = tfs)
         
         # Initialize test dataloader
         testloader = torch.utils.data.DataLoader(testset, batch_size = bs, shuffle = False)
@@ -84,8 +81,7 @@ def get_dl(ds_name, tfs, bs):
         # Get number of classes
         num_classes = len(torch.unique(torch.tensor(trainset.targets).clone().detach()))
 
-    print(f"{ds_name} is loaded successfully!")
-    print(f"{ds_name} has {num_classes} classes!")
+    print(f"{ds_name} is loaded successfully!"); print(f"{ds_name} has {num_classes} classes!")
     
     return trainloader, testloader, num_classes
 
