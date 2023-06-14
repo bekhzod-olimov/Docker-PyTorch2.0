@@ -87,6 +87,15 @@ python main.py --ds_name="cifar100"
 
 ## PyTorch Lightning Training
 
+* Create conda environment from yml file using the following script:
+```python
+conda env create -f environment.yml
+```
+Then activate the environment using the following command:
+```python
+conda activate speed
+```
+
 * Train a model using custom dataset:
 ```python
 python pl_main.py
