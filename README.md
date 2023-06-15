@@ -1,6 +1,7 @@
 # Docker-PyTorch2.0
 
 This repository contains information on installing [docker](https://www.docker.com/) on a virtual/local machine, make a docker container with CUDA 11.6/11.7 and install newly released [PyTorch 2.0](https://pytorch.org/get-started/pytorch-2.0/) and [PyTorch Lightning](https://www.pytorchlightning.ai/index.html).
+Also it cootains train, validation, and speed and accuracy performance comparison of the PyTorch 1.14, PyTorch 2.0, and PyTorch Lightning libraries.  
 
 ## Step-by-step tutorial on running docker
 * Install docker on your machine:
