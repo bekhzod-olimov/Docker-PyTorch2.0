@@ -134,10 +134,24 @@ class ImagePredictionLogger(Callback):
     
     def __init__(self, val_samples, cls_names = None, num_samples = 4):
         super().__init__()
+        # Get class arguments
         self.num_samples, self.cls_names = num_samples, cls_names
+        # Get images and their corresponding labels
         self.val_imgs, self.val_labels = val_samples
         
     def on_validation_epoch_end(self, trainer, pl_module):
+
+        """
+        
+        This function gets several parameters and visualize prediction results.
+
+        Parameters:
+
+            trainer      - pytorch lightning trainer, pytorch lightning trainer object;
+            pl_module    - model to predict input images, pytorch lightning module.
+        
+        """
+        
         # Move the tensors to device
         val_imgs = self.val_imgs.to(device = pl_module.device)
         val_labels = self.val_labels.to(device = pl_module.device)
@@ -211,7 +225,7 @@ def run(args):
 if __name__ == "__main__":
     
     # Initialize Argument Parser    
-    parser = argparse.ArgumentParser(description = 'Image Classification Training Arguments')
+    parser = argparse.ArgumentParser(description = "Image Classification Training Arguments")
     
     # Add arguments to the parser
     parser.add_argument("-r", "--root", type = str, default = 'dataset', help = "Path to the data")
