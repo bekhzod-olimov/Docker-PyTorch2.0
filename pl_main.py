@@ -119,6 +119,18 @@ class LitModel(pl.LightningModule):
     def get_stats(self): return self.train_times, self.validation_times
     
 class ImagePredictionLogger(Callback):
+
+    """
+    
+    This class gets several parameters and visualizes validation process results.
+
+    Parameters:
+
+        val_samples      - validation samples for prediction, tensor;
+        cls_names        - names of the classes in the dataset, list;
+        num_samples      - number of samples to be visualized, int.
+    
+    """
     
     def __init__(self, val_samples, cls_names = None, num_samples = 4):
         super().__init__()
