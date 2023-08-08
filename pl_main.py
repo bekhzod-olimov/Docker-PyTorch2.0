@@ -157,6 +157,7 @@ class ImagePredictionLogger(Callback):
         val_labels = self.val_labels.to(device = pl_module.device)
         # Get model prediction
         logits = pl_module(val_imgs)
+        # Get indices with the max perdiction value
         preds = torch.argmax(logits, -1)
         # Log the images as wandb Image
         if self.cls_names != None:
@@ -175,7 +176,7 @@ def run(args):
     
     Parameter:
     
-        args - parsed arguments.
+        args - parsed arguments, argparse object.
         
     Output:
     
@@ -187,20 +188,25 @@ def run(args):
     argstr = yaml.dump(args.__dict__, default_flow_style = False)
     print(f"\nTraining Arguments:\n\n{argstr}")
     
+    # Get transformations to be applied
     tfs = get_tfs(args.dataset_name)
+    # Initialize dataloader
     dl = CustomDataloader(root = args.root, transformations = tfs, bs = args.batch_size)
     # tr_dl, val_dl, test_dl = dl.get_dls()
     # torch.save(tr_dl, "saved_dls/tr_dl")
     # torch.save(val_dl, "saved_dls/val_dl")
     # torch.save(test_dl, "saved_dls/test_dl")
     
+    # Load train, validation, and test dataloaders
     tr_dl, val_dl, test_dl = torch.load("saved_dls/tr_dl"), torch.load("saved_dls/val_dl"), torch.load("saved_dls/test_dl")
+    # Get class names and number of classes in the dataset
     cls_names, n_cls = dl.get_info()
 
     # Samples required by the custom ImagePredictionLogger callback to log image predictions.
     val_samples = next(iter(val_dl))
     val_imgs, val_labels = val_samples[0], val_samples[1]
 
+    # Get model to be trained
     # model = LitModel(args.inp_im_size, args.model_name, num_classes) if args.dataset_name == 'custom' else LitModel((32, 32), args.model_name, num_classes)
     model = LitModel(args.inp_im_size, args.model_name, n_cls) 
 
@@ -213,9 +219,12 @@ def run(args):
                                       ModelCheckpoint(monitor = 'validation_loss', dirpath = args.save_model_path, filename = f'{args.model_name}_best')])
 
     
+    # Start training process
     start_time = time()
     trainer.fit(model, tr_dl, val_dl)
+    # Get model stats
     train_times, valid_times = model.get_stats()
+    # Save the stats
     torch.save(train_times, f"{args.stats_dir}/pl_train_times_{args.devices}_gpu")
     torch.save(valid_times[1:], f"{args.stats_dir}/pl_valid_times_{args.devices}_gpu")
 
