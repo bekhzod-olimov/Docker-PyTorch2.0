@@ -38,9 +38,11 @@ class LitModel(pl.LightningModule):
         
     # Feed forward of the model
     def forward(self, inp): return self.model(inp)
-    
+
+    # Set the train start time
     def on_train_epoch_start(self): self.train_start_time = time()
-    
+
+    # Compute the total train time
     def on_train_epoch_end(self): self.train_elapsed_time = time() - self.train_start_time; self.train_times.append(self.train_elapsed_time); self.log("train_time", self.train_elapsed_time, prog_bar = True)
         
     def training_step(self, batch, batch_idx):
