@@ -1,14 +1,10 @@
 # Import libraries
-import torch, torchmetrics, wandb, timm, argparse, yaml
-import pytorch_lightning as pl
-from pytorch_lightning.loggers import WandbLogger
+import torch, torchmetrics, wandb, timm, argparse, yaml, pytorch_lightning as pl
+from pytorch_lightning.loggers import WandbLogger; from time import time
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from pytorch_lightning.callbacks import ModelCheckpoint, Callback
-from torch import nn
-from torch.nn import functional as F
-from dataset import CustomDataloader
-from transformations import get_tfs
-from time import time
+from torch import nn; from torch.nn import functional as F
+from dataset import CustomDataloader; from transformations import get_tfs
 
 class LitModel(pl.LightningModule):
     
