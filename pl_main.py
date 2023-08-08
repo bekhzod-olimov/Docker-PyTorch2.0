@@ -109,23 +109,26 @@ class LitModel(pl.LightningModule):
         
         return loss
     
+    # Set the validation start time
     def on_validation_epoch_start(self): self.validation_start_time = time()
     
+    # Compute the total validation time
     def on_validation_epoch_end(self): self.validation_elapsed_time = time() - self.validation_start_time; self.validation_times.append(self.validation_elapsed_time); self.log("validation_time", self.validation_elapsed_time, prog_bar = True)
     
+    # Get train and validation time stats
     def get_stats(self): return self.train_times, self.validation_times
     
 class ImagePredictionLogger(Callback):
     
-    def __init__(self, val_samples, cls_names=None, num_samples=4):
+    def __init__(self, val_samples, cls_names = None, num_samples = 4):
         super().__init__()
         self.num_samples, self.cls_names = num_samples, cls_names
         self.val_imgs, self.val_labels = val_samples
         
     def on_validation_epoch_end(self, trainer, pl_module):
-        # Bring the tensors to CPU
-        val_imgs = self.val_imgs.to(device=pl_module.device)
-        val_labels = self.val_labels.to(device=pl_module.device)
+        # Move the tensors to device
+        val_imgs = self.val_imgs.to(device = pl_module.device)
+        val_labels = self.val_labels.to(device = pl_module.device)
         # Get model prediction
         logits = pl_module(val_imgs)
         preds = torch.argmax(logits, -1)
