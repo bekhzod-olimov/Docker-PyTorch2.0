@@ -237,17 +237,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Image Classification Training Arguments")
     
     # Add arguments to the parser
-    parser.add_argument("-r", "--root", type = str, default = 'dataset', help = "Path to the data")
+    parser.add_argument("-r", "--root", type = str, default = "dataset", help = "Path to the data")
     parser.add_argument("-bs", "--batch_size", type = int, default = 256, help = "Mini-batch size")
     parser.add_argument("-is", "--inp_im_size", type = tuple, default = (224, 224), help = "Input image size")
-    parser.add_argument("-dn", "--dataset_name", type = str, default = 'custom', help = "Dataset name for training")
-    parser.add_argument("-mn", "--model_name", type = str, default = 'efficientnet_b0', help = "Model name for backbone")
+    parser.add_argument("-dn", "--dataset_name", type = str, default = "custom", help = "Dataset name for training")
+    parser.add_argument("-mn", "--model_name", type = str, default = "efficientnet_b0", help = "Model name for backbone")
     # parser.add_argument("-mn", "--model_name", type = str, default = 'vit_base_patch16_224', help = "Model name for backbone")
     # parser.add_argument("-mn", "--model_name", type = str, default = 'vgg16_bn', help = "Model name for backbone")
     parser.add_argument("-d", "--devices", type = int, default = 4, help = "Number of GPUs for training")
     parser.add_argument("-lr", "--learning_rate", type = float, default = 1e-3, help = "Learning rate value")
     parser.add_argument("-e", "--epochs", type = int, default = 20, help = "Train epochs number")
-    parser.add_argument("-sm", "--save_model_path", type = str, default = 'saved_models', help = "Path to the directory to save a trained model")
+    parser.add_argument("-sm", "--save_model_path", type = str, default = "saved_models", help = "Path to the directory to save a trained model")
     parser.add_argument("-sd", "--stats_dir", type = str, default = "stats", help = "Path to dir to save train statistics")
     
     # Parse the added arguments
