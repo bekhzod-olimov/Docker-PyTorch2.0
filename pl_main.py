@@ -211,12 +211,12 @@ def run(args):
     model = LitModel(args.inp_im_size, args.model_name, n_cls) 
 
     # Initialize wandb logger
-    wandb_logger = WandbLogger(project='comparison', job_type='train', name=f"pl_lightning_multi_gpu_{args.devices}")
+    wandb_logger = WandbLogger(project = "comparison", job_type = "train", name = f"pl_lightning_multi_gpu_{args.devices}")
 
     # Initialize a trainer
     trainer = pl.Trainer(max_epochs = args.epochs, accelerator = "gpu", devices = args.devices, strategy = "ddp", logger = wandb_logger,
-                         callbacks = [EarlyStopping(monitor = 'validation_acc', mode = 'max', patience = 20), ImagePredictionLogger(val_samples, cls_names),
-                                      ModelCheckpoint(monitor = 'validation_loss', dirpath = args.save_model_path, filename = f'{args.model_name}_best')])
+                         callbacks = [EarlyStopping(monitor = "validation_acc", mode = "max", patience = 20), ImagePredictionLogger(val_samples, cls_names),
+                                      ModelCheckpoint(monitor = "validation_loss", dirpath = args.save_model_path, filename = f"{args.model_name}_best")])
 
     
     # Start training process
