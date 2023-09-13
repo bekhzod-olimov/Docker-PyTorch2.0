@@ -225,8 +225,7 @@ def run(args):
     # Get model stats
     train_times, valid_times = model.get_stats()
     # Save the stats
-    torch.save(train_times, f"{args.stats_dir}/pl_train_times_{args.devices}_gpu")
-    torch.save(valid_times[1:], f"{args.stats_dir}/pl_valid_times_{args.devices}_gpu")
+    torch.save(train_times, f"{args.stats_dir}/pl_train_times_{args.devices}_gpu"); torch.save(valid_times[1:], f"{args.stats_dir}/pl_valid_times_{args.devices}_gpu")
 
     # Close wandb run
     wandb.finish()
