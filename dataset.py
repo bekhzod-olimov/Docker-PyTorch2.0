@@ -2,6 +2,7 @@
 import torch, torchvision, os
 from torch.utils.data import random_split, Dataset, DataLoader
 from torch import nn; from PIL import Image; from torchvision import transforms as T; from torchvision.datasets import ImageFolder
+# Set manual seed for reproducibility
 torch.manual_seed(2023)
 
 def get_dl(ds_name, tfs, bs):
