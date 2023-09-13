@@ -1,3 +1,4 @@
+# List of the required dependencies, libraries and channels 
 name: speed
 channels:
   - pytorch
