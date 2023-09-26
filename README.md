@@ -40,18 +40,6 @@ docker exec -it <docker_name> /bin/bash
 
 where, <docker_name> is the name of the docker, pytorch2.0
 
-* Check docker processes:
-
-```python
-docker ps
-```
-
-Get the proccess id and run the docker using the process id:
-
-```python
-docker exec -it 3a0a920af240 /bin/bash
-```
-
 * Install libraries:
 ```python
 pip install numpy --pre torch torchvision torchaudio --force-reinstall --extra-index-url https://download.pytorch.org/whl/nightly/cu116
@@ -76,6 +64,24 @@ pip install jupyter jupyterlab
 jupyter lab --ip 0.0.0.0 --allow-root --port 9110 --no-browser
 ```
 change the port of your current running server to the port you defined before, ex: 9110. Enter the token that is generated when you run the jupyterlab
+
+* Check docker processes:
+
+```python
+docker ps
+```
+
+Get the proccess id and run the docker using the process id:
+
+```python
+docker exec -it 3a0a920af240 /bin/bash
+```
+
+Run the jupyter notebook:
+
+```python
+jupyter notebook --ip 0.0.0.0 --port 9999 --no-browser --allow-root
+```
 
 ## PyTorch 2.0 Training 
 
