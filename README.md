@@ -32,7 +32,10 @@ where, --gpus all - if you want to access gpus;\
 --name - is the name for docker, pytorch2.0;\
 <image_name> is the name of the image, qpod0dev/cuda_11.6
 
-* Run the docker:
+* Check docker processes:
+```python
+docker ps
+```
 
 ```python
 docker exec -it <docker_name> /bin/bash
